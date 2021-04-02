@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterDetail.ListaPro">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Grid >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Id" FontAttributes="Bold" FontSize="Micro"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Background="#ff2196f3"/>
+                <Label Text="Nombre" FontAttributes="Bold" Grid.Column="1" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  />
+                <Label Text="Descripcion" FontAttributes="Bold" Grid.Column="2" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  />
+                <Label Text="Precio" FontAttributes="Bold" Grid.Column="3" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  />
+                <Label Text="Imagen" FontAttributes="Bold" Grid.Column="4" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label Text="Cantidad" FontAttributes="Bold" Grid.Column="5" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                <Label Text="Codigo de Barras" FontAttributes="Bold" Grid.Column="6" FontSize="Micro" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </Grid>
+            <ListView ItemsSource=" {Binding productos}"
+                  HasUnevenRows="True"
+                  ItemSelected="ListView_ItemSelected"
+                  ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label  Text="{Binding Id}" Grid.Row="1" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                                <Label   Grid.Column="1" Grid.Row="1" Text="{Binding Nombre}" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                                <Label   Grid.Column="2"  Grid.Row="1"   Text="{Binding Descripcion}" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                                <Label   Grid.Column="3"     Grid.Row="1"    Text="{Binding Precio}" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                                <Image   Grid.Column="4"  Grid.Row="1" Source="{Binding URL}" 
+                                    Aspect="AspectFill" HeightRequest="10" WidthRequest="10" />
+                                <Label   Grid.Column="5"  Grid.Row="1" Text="{Binding Cantidad}" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                                <Label   Grid.Column="6"  Grid.Row="1" Text="{Binding Codigo}" FontSize="Micro" HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
