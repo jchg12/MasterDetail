@@ -9,7 +9,7 @@ namespace MasterDetail
         [Obsolete ]
         public static MasterDetailPage MasterDet { get; set; }
 
-        [Obsolete ]
+        
         public App()
         {
             InitializeComponent();
